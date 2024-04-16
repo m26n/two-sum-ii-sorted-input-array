@@ -9,10 +9,10 @@ class Solution:
         while left < right:
             if numbers[left] + numbers[right] == target:
                 return [left + 1, right + 1]
-            if numbers[left] + numbers[right - 1] >= target:
+            elif numbers[left] + numbers[right] > target:
                 right -= 1
-                continue
-            left += 1
+            else:
+                left += 1
 
 
 sol = Solution()
