@@ -9,12 +9,10 @@ class Solution:
         while left < right:
             if numbers[left] + numbers[right] == target:
                 return [left + 1, right + 1]
-            if numbers[left] + numbers[right-1] >= target:
+            if numbers[left] + numbers[right - 1] >= target:
                 right -= 1
                 continue
-            if numbers[left+1] + numbers[right] >= target:
-                left += 1
-                continue
+            left += 1
 
 
 sol = Solution()
@@ -50,3 +48,11 @@ output4 = [2, 3]
 twoSums = sol.twoSum(numbers4, target4)
 
 assert twoSums == output4
+
+numbers5 = [1, 3, 4, 4]
+target5 = 8
+output5 = [3, 4]
+
+twoSums = sol.twoSum(numbers5, target5)
+
+assert twoSums == output5
